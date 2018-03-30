@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Qui ci va il titolo -->
+    <title>
+        TutGem try it!
+    </title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/html2canvas.min.js"></script>
+    <script src="js/jquery-3.0.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="final.js"></script>
+    <link rel="stylesheet" href="final.css">
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <script>
+        //Step 1 create the data structure with the elements of the tutorial
+        //myNode, fromWhere, myBackgroundColor, myBackgroundColor2, myDescription, myArrowColor
+        var array = [];
+        //First toolTip
+        array.push(new genericNode(null, null,
+            null, '#ffff66', "Hey mate, <br/> Let's say this is a travelling agency website. <br/> I'm your tool tip, here to show you around. <br/> See this arrow? Follow it and click on the highlighted element", null));
+        $(document).ready(function() {
+            //First element of the tutorial
+            array.push(new genericNode(document.getElementById("specialOffers"), null, '#ff0000', '#ffff66', "In this section you can find all our special offers! <br/> Never forget to have a look!", "#ffffcc"));
+            //Second element of the tutorial
+            array.push(new genericNode(document.getElementById("chooseDest"), null, '#9933ff', '#ffff66', "Do you have a place in particular on your mind? Here's where you can search your destination and find out how cheap it is to go there with us!", "#ffffcc"));
+            //Third element of the tutorial
+            array.push(new genericNode(document.getElementById("most"), "top", '#ffffff', '#ffff66', "Here are the most requested of our arranged travels. If you haven't decided yet where to go or what you want from your holidays don't miss this section. It will help you understanding what's popular! In the end, there must be a reason if something is very popular...", "#ffffcc"));
+            ///Fourth element of the tutorial
+            array.push(new genericNode(document.getElementById("dest"), null, '#ffffff', '#ffff66', 'This is the destination column of the most requested travels. You can scroll it till you see a place that intrigues you.', "#ffffcc"));
+            //Fifth element of the tutorial
+            array.push(new genericNode(document.getElementById("descr"), "bottom", '#ffffff', '#ffff66', 'This description might help you in case you do not know much about that destination', "#ffffcc"));
+            //Sixth element of the tutorial
+            array.push(new genericNode(document.getElementById("contact"), null, '#88cc00', '#ffff66', 'Clicking here will lead you to all the directions to contact us. We hope you liked your first trip, although it is only around this page. We are sure that your next will be around the World. Click here to go to the main page<br/> <button type="button" class="btn btn-danger">Main page</button>', "#ffffcc"));
+            setTimeout(function() {
+                tutGem(array, function() {
+                    alert('Chiusura tutorial');
+                });
+
+            }, 10000);
+
+        });
+    </script>
+</head>
+
+<body>
+    <div style="width:80%; margin:auto auto">
+        <h1>This page is a sample page to show how tutorialGem works</h1>
+        In this instance of tutorialGem you will be guided around all the elements of this page. Tutorial Gem offers a good flexibility on cusomization of colors. In this example there are only a few colors displayed for appearance sake.
+        </br>
+        Thank you for your attention, the tutorial should start very soon.
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        <div style="position: relative; width: 200px; height: 20px; background: red">
+            <div id="specialOffers"> Special offers
+            </div>
+            <p>
+                I'm sorry no special offers available at the moment.
+            </p>
+        </div>
+        </br>
+        </br>
+        <button id="chooseDest" type="button" class="btn btn-primary" style="float: right;">Choose destination</button>
+        </br>
+        </br>
+        </br>
+        </br>
+        <div style="width:50%; margin: auto auto">
+            <h2 id="most"> Most requested </h2>
+            <table>
+                <tr>
+                    <td id="dest">
+                        <b> Destination</b>
+                    </td>
+                    <td id="descr">
+                        <b> Description </b>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top:2%; padding-bottom:2%; padding-left:2%;">
+                        <img src="pics/london.jpg" class="img-rounded" alt="Gattini" width="50%" />
+                    </td>
+                    <td valign="top" style="color:#505050; font-size: 12pt; line-height:100%; padding-top:2%; padding-right;2%; padding-left:2%; width:50%">
+                        In the beautiful city of London you're allowed to feel the breeze of the Thames, drinking a cup of tea and reading The Independent without feeling out of the context.
+                        </br>
+                        What are you waiting for? Jump in this adventure! We'll manage everything to make you journey perfect.
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top:2%; padding-bottom:2%; padding-left:2%;">
+                        <img src="pics/paris.jpg" class="img-rounded" alt="Gattini" width="70%" />
+                    </td>
+                    <td valign="top" style="color:#505050; font-size: 12pt; line-height:100%; padding-top:2%; padding-right;2%; padding-left:2%; width:50%">
+                        Are you looking for the perfect chance to propose? Here's your solution. In this trip are included 5 stars hotel, all meals and a ticket for the Eiffel Tower.
+                        </br>
+                        No special occasion? We have plenty of solutions to give you the chance to visit this marvellouw city.
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top:2%; padding-bottom:2%; padding-left:2%;">
+                        <img src="pics/iran.jpg" class="img-rounded" alt="Gattini" width="80%" />
+                    </td>
+                    <td valign="top" style="color:#505050; font-size: 12pt; line-height:100%; padding-top:2%; padding-right;2%; padding-left:2%; width:50%">
+                        You're an expert traveller. No place is enough far or cool for you. Well, we thought of your need too.
+                        </br>
+                        Why not visiting Theran? It's really different from Western cities and it's sorrounded by the desert. It's your chance to do something new. Book Now!
+                    </td>
+                </tr>
+            </table>
+            </br>
+            <button id="contact" type="button" class="btn btn-link">Contact us</button>
+            <br/>
+            <br/>
+
+        </div>
+</body>
+
+</html>

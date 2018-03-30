@@ -1,0 +1,151 @@
+.shade {
+    background-color: black;
+    opacity: 0.5;
+    /*    filter: blur(5px);*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.hole {
+    z-index: 10001;
+}
+
+
+.closeTip {
+    color: #777777 !important;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.textTip {
+    position: absolute;
+    top: 10px;
+    overflow: hidden;
+    font-size: 12px;
+    text-align: center;
+    padding: 2.5em;
+}
+
+.tTip * {
+    display: inline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*For shadeDiv*/
+
+.superBottomLayer {
+    z-index: 10000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*For the current hole*/
+
+.bottomLayer {
+    z-index: 10001;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*For trapezoid's svg*/
+
+.middleLayer {
+    z-index: 10002;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*For every div and arrow*/
+
+.highLayer {
+    z-index: 10003;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*For animatingEl e currHole*/
+
+.veryHighLayer {
+    z-index: 10004;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*For clickDiv e toolTipDiv ed il div che toglie la clickabilità al item ingrandito*/
+
+.superHighLayer {
+    z-index: 10005;
+}
